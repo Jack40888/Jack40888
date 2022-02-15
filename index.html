@@ -1,9 +1,126 @@
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <title>git hub</title>
- </head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <title>Hello</title>
+    <style>
+        body,
+        html {
+            min-height: 100%;
+        }
+
+        body {
+            background-image: url(./images/bck1.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #head {
+            text-align: center;
+            margin: 20% auto;
+            color: tomato;
+        }
+
+        #btn {
+            font-size: large;
+            font-family: Roboto, sans-serif;
+            background-color: #eb1818;
+            border-radius: 5px;
+            padding: 10px 35px;
+            border: none;
+            color: rgb(231, 214, 211);
+        }
+
+        #valentine {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 20px);
+        }
+
+        /*
+        ---------------------------------------
+        */
+        .focus-in-contract-bck {
+            -webkit-animation: focus-in-contract-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation: focus-in-contract-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        }
+
+        .text {
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /**
+ * ----------------------------------------
+ * animation focus-in-contract-bck
+ * ----------------------------------------
+ */
+        @-webkit-keyframes focus-in-contract-bck {
+            0% {
+                letter-spacing: 1em;
+                -webkit-transform: translateZ(300px);
+                transform: translateZ(300px);
+                -webkit-filter: blur(12px);
+                filter: blur(12px);
+                opacity: 0;
+            }
+
+            100% {
+                -webkit-transform: translateZ(12px);
+                transform: translateZ(12px);
+                -webkit-filter: blur(0);
+                filter: blur(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes focus-in-contract-bck {
+            0% {
+                letter-spacing: 1em;
+                -webkit-transform: translateZ(300px);
+                transform: translateZ(300px);
+                -webkit-filter: blur(12px);
+                filter: blur(12px);
+                opacity: 0;
+            }
+
+            100% {
+                -webkit-transform: translateZ(12px);
+                transform: translateZ(12px);
+                -webkit-filter: blur(0);
+                filter: blur(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
 
 <body>
-  <h1>git hub</h1>
+    <div id="head">
+        <h1 class="header">Hello world</h1>
+        <button id="btn">My World </button>
+    </div>
+    <div id="valentine" class="focus-in-contract-bck">
+        <h1 class="text">hello world</h1>
+    </div>
+
+    <script>
+
+        document.getElementById("btn").addEventListener("click", () => {
+            document.getElementById("head").style.cssText = "display:none";
+
+            let x = document.getElementById("valentine").offsetHeight;
+            document.getElementById("valentine").style.cssText = "display:flex;";
+        });
+    </script>
+
 </body>
+
 </html>
